@@ -32,6 +32,16 @@ class Stack{
 		}
 	}
 	
+		int peek(){
+		if(top>=0)
+		return arr[top];
+		else{
+			cout<<"Stack is empty"<<endl;
+			return -1;
+		}
+	}
+	
+	
 };
 int main(){
 //	//creation of stack
