@@ -22,6 +22,16 @@ class Stack{
 			cout<<"Stack Overflow"<<endl;
 		}
 	}
+		
+	void pop(){
+		if(top>=0){
+			top--;
+		}
+		else{
+			cout<<"Stack Underflow"<<endl;
+		}
+	}
+	
 };
 int main(){
 //	//creation of stack
