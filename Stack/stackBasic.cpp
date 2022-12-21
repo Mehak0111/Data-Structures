@@ -6,7 +6,6 @@ class Stack{
 		int *arr;
 		int top;
 		int size;
-		
     //behaviour
     Stack(int size){
     	this->size=size;
