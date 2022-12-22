@@ -17,6 +17,7 @@ void print(Node *head){
         cout<<temp->data<<" ";
         temp=temp->next;
     }
+    cout<<endl;
 }
 Node* insertAtHead(Node* head,int data){
 	Node* newNode=new Node(data);
@@ -53,11 +54,18 @@ Node* insertAtIthPos(Node* head,int data,int index){
 	temp1->prev=newNode;
 	return head;
 }
+Node* deleteFromHead(Node* head){
+	head=head->next;
+	head->prev=NULL;
+	return head;
+}
 int main(){
 	Node *n=new Node(1);
 	Node *head=n;
 	head=insertAtHead(head,13);
 	head=insertAtTail(head,24);
 	head=insertAtIthPos(head,56,2);
+	print(head);
+	head=deleteFromHead(head);
 	print(head);
 }
