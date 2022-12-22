@@ -52,6 +52,20 @@ Node* insertAtTail(Node* head,int data){
 	temp->next=NULL;
 	return head;
 }
+Node* insertAtIthPos(Node* head,int data,int index){
+	Node* newNode=new Node(data);
+	Node* temp=head;
+	int count=0;
+	while(count<index-1){
+		temp=temp->next;
+		count++;
+	}
+	Node* temp1=temp->next;
+	temp->next=newNode;
+	temp=newNode;
+	newNode->next=temp1;
+	return head;
+}
 int main()
 {
 //statically
@@ -70,5 +84,6 @@ int main()
   Node* head=takeinput();
   head=insertAtHead(head,10);
   head=insertAtTail(head,11);
+  head=insertAtIthPos(head,23,3);
   print(head);
 }
