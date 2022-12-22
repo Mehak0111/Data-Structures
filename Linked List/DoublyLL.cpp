@@ -18,8 +18,18 @@ void print(Node *head){
         temp=temp->next;
     }
 }
+Node* insertAtHead(Node* head,int data){
+	Node* newNode=new Node(data);
+	Node *temp=head;
+	newNode->prev=NULL;
+	newNode->next=head;
+	head->prev=newNode;
+	head=newNode;
+	return head;
+}
 int main(){
 	Node *n=new Node(1);
 	Node *head=n;
+	head=insertAtHead(head,13);
 	print(head);
 }
