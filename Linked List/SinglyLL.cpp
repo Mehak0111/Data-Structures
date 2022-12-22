@@ -34,6 +34,7 @@ void print(Node* head){
 		cout<<head->data<<" ";
 		head=head->next;
 	}
+	cout<<endl;
 }
 Node* insertAtHead(Node* head,int data){
 	Node* newNode=new Node(data);
@@ -66,6 +67,14 @@ Node* insertAtIthPos(Node* head,int data,int index){
 	newNode->next=temp1;
 	return head;
 }
+int length(Node* head){
+	int count=0;
+	while(head!=NULL){
+		head=head->next;
+		count++;
+	}
+	return count;
+}
 int main()
 {
 //statically
@@ -86,4 +95,5 @@ int main()
   head=insertAtTail(head,11);
   head=insertAtIthPos(head,23,3);
   print(head);
+  cout<<length(head)<<endl;
 }
