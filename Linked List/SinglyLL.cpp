@@ -89,6 +89,10 @@ int length(Node* head){
 	}
 	return count;
 }
+Node* deleteHead(Node* head){
+	head=head->next;
+	return head;
+}
 int main()
 {
 //statically
@@ -109,6 +113,8 @@ int main()
   head=insertAtTail(head,11);
   head=insertAtIthPos(head,23,3);
   head=insertAtMid(head,56,length(head)/2);
+  print(head);
+  head=deleteHead(head);
   print(head);
   cout<<length(head)<<endl;
 }
