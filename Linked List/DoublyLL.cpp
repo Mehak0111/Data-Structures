@@ -27,9 +27,21 @@ Node* insertAtHead(Node* head,int data){
 	head=newNode;
 	return head;
 }
+Node* insertAtTail(Node* head,int data){
+	Node* newNode=new Node(data);
+	Node *temp=head;
+	while(temp->next!=NULL){
+		temp=temp->next;
+	}
+	temp->next=newNode;
+	newNode->prev=temp;
+	newNode->next=NULL;
+	return head;
+}
 int main(){
 	Node *n=new Node(1);
 	Node *head=n;
 	head=insertAtHead(head,13);
+	head=insertAtTail(head,24);
 	print(head);
 }
