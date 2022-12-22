@@ -67,14 +67,30 @@ Node* deleteFromTail(Node* head){
 	temp->next=NULL;
 	return head;
 }
+Node* deleteFromIthIndex(Node* head,int index){
+	Node* temp=head;
+	int count=0;
+	while(count<index-1){
+		temp=temp->next;
+		count++;
+	}
+	Node* temp1=temp->next->next;
+    temp->next=temp1;
+	return head;
+}
 int main(){
 	Node *n=new Node(1);
 	Node *head=n;
 	head=insertAtHead(head,13);
 	head=insertAtTail(head,24);
 	head=insertAtIthPos(head,56,2);
+	head=insertAtTail(head,34);
+	head=insertAtTail(head,35);
+	head=insertAtTail(head,36);
+	head=insertAtTail(head,37);
 	print(head);
-	head=deleteFromHead(head);
+	//head=deleteFromHead(head);
     head=deleteFromTail(head);
+    head=deleteFromIthIndex(head,2);
 	print(head);
 }
