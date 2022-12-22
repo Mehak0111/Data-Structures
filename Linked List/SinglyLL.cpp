@@ -67,6 +67,20 @@ Node* insertAtIthPos(Node* head,int data,int index){
 	newNode->next=temp1;
 	return head;
 }
+Node* insertAtMid(Node* head,int data,int size){
+	Node* newNode=new Node(data);
+	Node* temp=head;
+	int count=0;
+	while(count<size){
+		temp=temp->next;
+		count++;
+	}
+	Node* temp1=temp->next;
+	temp->next=newNode;
+	temp=newNode;
+	newNode->next=temp1;
+	return head;
+}
 int length(Node* head){
 	int count=0;
 	while(head!=NULL){
@@ -94,6 +108,7 @@ int main()
   head=insertAtHead(head,10);
   head=insertAtTail(head,11);
   head=insertAtIthPos(head,23,3);
+  head=insertAtMid(head,56,length(head)/2);
   print(head);
   cout<<length(head)<<endl;
 }
