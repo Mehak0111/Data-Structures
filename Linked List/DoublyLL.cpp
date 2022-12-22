@@ -59,6 +59,14 @@ Node* deleteFromHead(Node* head){
 	head->prev=NULL;
 	return head;
 }
+Node* deleteFromTail(Node* head){
+	Node* temp=head;
+	while(temp->next->next!=NULL){
+		temp=temp->next;
+	}
+	temp->next=NULL;
+	return head;
+}
 int main(){
 	Node *n=new Node(1);
 	Node *head=n;
@@ -67,5 +75,6 @@ int main(){
 	head=insertAtIthPos(head,56,2);
 	print(head);
 	head=deleteFromHead(head);
+    head=deleteFromTail(head);
 	print(head);
 }
