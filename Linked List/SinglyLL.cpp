@@ -93,6 +93,14 @@ Node* deleteHead(Node* head){
 	head=head->next;
 	return head;
 }
+Node* deleteTail(Node* head){
+	Node* temp=head;
+	while(temp->next->next!=NULL){
+		temp=temp->next;
+	}
+	temp->next=NULL;
+	return head;
+}
 int main()
 {
 //statically
@@ -115,6 +123,7 @@ int main()
   head=insertAtMid(head,56,length(head)/2);
   print(head);
   head=deleteHead(head);
+  head=deleteTail(head);
   print(head);
   cout<<length(head)<<endl;
 }
