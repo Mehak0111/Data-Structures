@@ -101,6 +101,17 @@ Node* deleteTail(Node* head){
 	temp->next=NULL;
 	return head;
 }
+Node* deleteIthPos(Node* head,int index){
+	Node* temp=head;
+	int count=0;
+	while(count<index-1){
+		temp=temp->next;
+		count++;
+	}
+	Node* temp1=temp->next->next;
+	temp->next=temp1;
+	return head;
+}
 int main()
 {
 //statically
@@ -124,6 +135,7 @@ int main()
   print(head);
   head=deleteHead(head);
   head=deleteTail(head);
+  head=deleteIthPos(head,4);
   print(head);
   cout<<length(head)<<endl;
 }
